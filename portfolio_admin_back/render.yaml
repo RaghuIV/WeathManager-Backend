@@ -7,3 +7,9 @@ services:
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: portfolio_admin_back.settings
+      - key: SECRET_KEY
+        value: your-secret-key-here
+      - key: DEBUG
+        value: 'False'
+      - key: PYTHON_VERSION
+        value: 3.12.0
