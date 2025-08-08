@@ -55,7 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'portfolio_admin_back.urls'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
 
 TEMPLATES = [
     {

@@ -7,21 +7,26 @@ from .sample_data import portfolio_data, performance_data
 
 @api_view(['GET'])
 def portfolio_holdings(request):
-    data = [
-        {
-            "symbol": "RELIANCE",
-            "name": "Reliance Industries Ltd",
-            "quantity": 50,
-            "avgPrice": 2450.00,
-            "currentPrice": 2680.50,
-            "sector": "Energy",
-            "marketCap": "Large",
-            "value": 134025.00,
-            "gainLoss": 11525.00,
-            "gainLossPercent": 9.4
-        }
-    ]
-    return Response(data)
+    enriched_data = []
+
+    for stock in portfolio_data:
+        quantity = stock["quantity"]
+        avg_price = stock["avgPrice"]
+        current_price = stock["currentPrice"]
+
+        invested = quantity * avg_price
+        value = quantity * current_price
+        gain_loss = value - invested
+        gain_loss_percent = (gain_loss / invested) * 100 if invested else 0
+
+        enriched_data.append({
+            **stock,
+            "value": round(value, 2),
+            "gainLoss": round(gain_loss, 2),
+            "gainLossPercent": round(gain_loss_percent, 2)
+        })
+
+    return Response(enriched_data)
 
 @api_view(['GET'])
 def portfolio_allocation(request):
