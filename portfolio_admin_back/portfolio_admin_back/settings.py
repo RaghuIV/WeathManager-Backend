@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dummy-insecure-key-for-dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['weath-manager-frontend.vercel.app/']
+ALLOWED_HOSTS = ['weath-manager-frontend.vercel.app']
 
 
 # Application definition
