@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&bh+7x%mw9)&sw_8wkd%w$8tj4a2tzplycs6u8$17&*z19!9z@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://weath-manager-frontend.vercel.app/']
 
 
 # Application definition
@@ -56,10 +56,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'portfolio_admin_back.urls'
 
 CORS_ALLOW_ALL_ORIGINS = False
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-]
 
 TEMPLATES = [
     {
