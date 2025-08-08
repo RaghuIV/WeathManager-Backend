@@ -1,1 +1,1 @@
-web: gunicorn portfolio_admin_back.wsgi
+web: gunicorn portfolio_admin_back.portfolio_admin_back.wsgi
